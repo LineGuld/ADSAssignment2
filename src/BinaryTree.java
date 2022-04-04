@@ -4,6 +4,7 @@ public class BinaryTree<E>
 {
   private BinaryTreeNode<E> root;
   private int size;
+  private ArrayList<E> orderList;
 
   public BinaryTree(BinaryTreeNode<E> root)
   {
@@ -45,7 +46,7 @@ public class BinaryTree<E>
   {
 
     if (root == null) {
-      System.out.println("Trylle trylle ... binær træet er tomt");
+      return false;
     } else {
       if (root.getElement() == element)
       {
@@ -76,28 +77,60 @@ public class BinaryTree<E>
 
   public ArrayList<E> inOrder()
   {
-    //TODO
+    orderList = new ArrayList<>();
+    inOrder(root);
+    return orderList.isEmpty()? null : orderList;
+  }
 
-    return null;
+  private void inOrder(BinaryTreeNode node)
+  {
+    if (node == null) return;
+
+    inOrder(node.getLeftChild());
+    orderList.add((E) node.getElement());
+    inOrder(node.getRightChild());
   }
 
   public ArrayList<E> preOrder()
   {
-    //TODO
+    orderList = new ArrayList<>();
+    preOrder(root);
+    return orderList.isEmpty()? null : orderList;
+  }
 
-    return null;
+  private void preOrder(BinaryTreeNode node)
+  {
+    if (node == null) return;
+
+    orderList.add((E) node.getElement());
+    preOrder(node.getLeftChild());
+    preOrder(node.getRightChild());
   }
 
   public ArrayList<E> postOrder(){
-    //TODO
+    orderList = new ArrayList<>();
+    postOrder(root);
+    return orderList.isEmpty()? null : orderList;
+  }
 
-    return null;
+  private void postOrder(BinaryTreeNode node)
+  {
+    if (node == null) return;
+
+    postOrder(node.getLeftChild());
+    postOrder(node.getRightChild());
+    orderList.add((E) node.getElement());
   }
 
   public ArrayList<E> levelOrder(){
     //TODO
 
     return null;
+  }
+
+  private void levelOrder(BinaryTreeNode node)
+  {
+
   }
 
   public int height()
