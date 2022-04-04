@@ -49,30 +49,25 @@ public class BinaryTree<E>
     } else {
       if (root.getElement() == element)
       {
-        System.out.println("Is '" + root.getElement() + "' equal to '" + element + "'" + " true...");
         return true;
       }
 
       if (root.getLeftChild() != null)
       {
         BinaryTree leftSubtree = new BinaryTree(root.getLeftChild());
-        System.out.println("Checking left sub tree");
-        System.out.println("Length " + leftSubtree.size + " " + leftSubtree.getRoot().getElement() + " vs " + element);
+
         if (leftSubtree.contains(element)) {
           return true;
         }
-        //return leftSubtree.contains(element);
       }
 
       if (root.getRightChild() != null)
       {
         BinaryTree rightSubtree = new BinaryTree(root.getRightChild());
-        System.out.println("Checking right sub tree");
-        System.out.println("Length " + rightSubtree.size + " " + rightSubtree.getRoot().getElement() + " vs " + element);
+
         if (rightSubtree.contains(element)) {
           return true;
         }
-        //return rightSubtree.contains(element);
       }
     }
 
