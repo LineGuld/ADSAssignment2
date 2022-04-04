@@ -43,26 +43,34 @@ public class BinaryTree<E>
 
   public boolean contains(E element)
   {
-    //TODO
+
     if (root == null) {
       System.out.println("Trylle trylle ... binær træet er tomt");
     } else {
-      if (root == element)
+      if (root.getElement() == element)
       {
         return true;
       }
-      if(element.compareTo(root) < 0)
+
+      if (root.getLeftChild() != null)
       {
-        BinaryTree leftSubtree = new BinaryTree<>(root.getLeftChild());
-        return leftSubtree.contains(element);
+        BinaryTree leftSubtree = new BinaryTree(root.getLeftChild());
+
+        if (leftSubtree.contains(element)) {
+          return true;
+        }
       }
-      if(element.compareTo(root) > 0)
+
+      if (root.getRightChild() != null)
       {
-        BinaryTree rightSubtree = new BinaryTree<>(root.getRightChild());
-        return rightSubtree.contains(element);
+        BinaryTree rightSubtree = new BinaryTree(root.getRightChild());
+
+        if (rightSubtree.contains(element)) {
+          return true;
+        }
       }
-      //contains()
     }
+
     return false;
   }
 

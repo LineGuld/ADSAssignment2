@@ -22,7 +22,7 @@ public class BinaryTreeTest
   @Test
   void setRoot()
   {
-    BinaryTree tree = new BinaryTree<>(null);
+    BinaryTree tree = new BinaryTree(null);
     BinaryTreeNode root = new BinaryTreeNode(3);
     tree.setRoot(root);
 
@@ -37,7 +37,7 @@ public class BinaryTreeTest
 
     tree.setRoot(root);
 
-    BinaryTreeNode newRoot = new BinaryTreeNode<>(5);
+    BinaryTreeNode newRoot = new BinaryTreeNode(5);
     Assertions.assertThrows(IllegalArgumentException.class, () -> tree.setRoot(newRoot));
   }
 
@@ -78,7 +78,7 @@ public class BinaryTreeTest
   {
     BinaryTree tree = new BinaryTree<>(new BinaryTreeNode<>(7));
 
-    Assertions.assertEquals(true, tree.contains(5));
+    Assertions.assertEquals(false, tree.contains(5));
   }
 
   @Test

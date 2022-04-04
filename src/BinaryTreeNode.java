@@ -1,24 +1,24 @@
-public class BinaryTreeNode<Object>
+public class BinaryTreeNode<E>
 {
-  private BinaryTreeNode<Object> leftChild, rightChild;
-  private Object element;
+  private BinaryTreeNode<E> leftChild, rightChild;
+  private E element;
 
-  public BinaryTreeNode(Object element)
+  public BinaryTreeNode(E element)
   {
     this.element = element;
   }
 
-  public void setElement(Object element)
+  public void setElement(E element)
   {
     this.element = element;
   }
 
-  public Object getElement()
+  public E getElement()
   {
     return element;
   }
 
-  public void addLeftChild(BinaryTreeNode<Object> node)
+  public void addLeftChild(BinaryTreeNode<E> node)
   {
     if (leftChild == null)
     {
@@ -30,7 +30,7 @@ public class BinaryTreeNode<Object>
     }
   }
 
-  public void addRightChild(BinaryTreeNode<Object> node)
+  public void addRightChild(BinaryTreeNode<E> node)
   {
     if (rightChild == null)
     {
@@ -42,12 +42,12 @@ public class BinaryTreeNode<Object>
     }
   }
 
-  public BinaryTreeNode<Object> getLeftChild()
+  public BinaryTreeNode<E> getLeftChild()
   {
     return leftChild;
   }
 
-  public BinaryTreeNode<Object> getRightChild()
+  public BinaryTreeNode<E> getRightChild()
   {
     return rightChild;
   }
