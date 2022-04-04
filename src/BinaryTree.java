@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class BinaryTree<E>
 {
   private BinaryTreeNode<E> root;
-  boolean found = false;
   private int size;
 
   public BinaryTree(BinaryTreeNode<E> root)
@@ -44,35 +43,40 @@ public class BinaryTree<E>
 
   public boolean contains(E element)
   {
-    if (!found) {
-      if (root == null) {
-        System.out.println("Trylle trylle ... binær træet er tomt");
-      } else {
-        if (root.getElement() == element)
-        {
-          found = true;
-          System.out.println("Is '" + root.getElement() + "' equal to '" + element + "'" + " " + found);
-        }
 
-        if (root.getLeftChild() != null && !found)
-        {
-          BinaryTree leftSubtree = new BinaryTree(root.getLeftChild());
-          leftSubtree.contains(element);
-          System.out.println("Checking left sub tree");
-          System.out.println("Length " + leftSubtree.size + " " + leftSubtree.getRoot().getElement() + " vs " + element);
-        }
+    if (root == null) {
+      System.out.println("Trylle trylle ... binær træet er tomt");
+    } else {
+      if (root.getElement() == element)
+      {
+        System.out.println("Is '" + root.getElement() + "' equal to '" + element + "'" + " true...");
+        return true;
+      }
 
-        if (root.getRightChild() != null && !found)
-        {
-          BinaryTree rightSubtree = new BinaryTree(root.getRightChild());
-          rightSubtree.contains(element);
-          System.out.println("Checking right sub tree");
-          System.out.println("Length " + rightSubtree.size + " " + rightSubtree.getRoot().getElement() + " vs " + element);
+      if (root.getLeftChild() != null)
+      {
+        BinaryTree leftSubtree = new BinaryTree(root.getLeftChild());
+        System.out.println("Checking left sub tree");
+        System.out.println("Length " + leftSubtree.size + " " + leftSubtree.getRoot().getElement() + " vs " + element);
+        if (leftSubtree.contains(element)) {
+          return true;
         }
+        //return leftSubtree.contains(element);
+      }
+
+      if (root.getRightChild() != null)
+      {
+        BinaryTree rightSubtree = new BinaryTree(root.getRightChild());
+        System.out.println("Checking right sub tree");
+        System.out.println("Length " + rightSubtree.size + " " + rightSubtree.getRoot().getElement() + " vs " + element);
+        if (rightSubtree.contains(element)) {
+          return true;
+        }
+        //return rightSubtree.contains(element);
       }
     }
 
-    return found;
+    return false;
   }
 
   public ArrayList<E> inOrder()
