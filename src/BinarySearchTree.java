@@ -7,31 +7,31 @@ public class BinarySearchTree extends BinaryTree
     this.root = root;
   }
 
-  public boolean insert(E element)
+  public boolean insert(Object element)
   {
     //TODO
     return false;
   }
 
-  public boolean removeElement(E element)
+  public boolean removeElement(Object element)
   {
     //TODO
     return false;
   }
 
-  public E findMin()
+  public Object findMin()
   {
     //TODO
-    return E ;
+    return  ;
   }
 
-  public E findMax()
+  public Object findMax()
   {
     //TODO
-    return E ;
+    return  ;
   }
 
-  public boolean contains(E element)
+  public boolean contains(Object element)
   {
     //TODO
     return false;

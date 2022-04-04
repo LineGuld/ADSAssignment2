@@ -1,6 +1,6 @@
 public class BinaryTreeNode<E>
 {
-  private E element;
+  private Object element;
   private BinaryTreeNode leftChild, rightChild;
 
   public BinaryTreeNode(E element, BinaryTreeNode leftChild,
@@ -11,7 +11,7 @@ public class BinaryTreeNode<E>
     this.rightChild = rightChild;
   }
 
-  public void setElement(E element)
+  public void setElement(Object element)
   {
     //TODO
   }

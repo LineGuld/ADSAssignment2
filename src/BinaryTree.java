@@ -31,26 +31,26 @@ public class BinaryTree
     //TODO
   }
 
-  public boolean contains(E element)
+  public boolean contains(Object element)
   {
     //TODO
   }
 
-  public ArrayList<E> inOrder()
+  public ArrayList<Object> inOrder()
   {
     //TODO
   }
 
-  public ArrayList<E> preOrder()
+  public ArrayList<Object> preOrder()
   {
     //TODO
   }
 
-  public ArrayList<E> postOrder(){
+  public ArrayList<Object> postOrder(){
     //TODO
   }
 
-  public ArrayList<E> levelOrder(){
+  public ArrayList<Object> levelOrder(){
     //TODO
   }
 
