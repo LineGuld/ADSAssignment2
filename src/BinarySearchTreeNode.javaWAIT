@@ -1,0 +1,9 @@
+public class BinarySearchTreeNode extends BinaryTreeNode<Number>
+{
+
+  public BinarySearchTreeNode(Object element, BinaryTreeNode<Number> leftChild,
+      BinaryTreeNode<Number> rightChild)
+  {
+    super(element, leftChild, rightChild);
+  }
+}

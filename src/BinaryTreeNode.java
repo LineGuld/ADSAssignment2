@@ -1,40 +1,54 @@
-public class BinaryTreeNode<E>
+public class BinaryTreeNode<Object>
 {
+  private BinaryTreeNode<Object> leftChild, rightChild;
   private Object element;
-  private BinaryTreeNode leftChild, rightChild;
 
-  public BinaryTreeNode(E element, BinaryTreeNode leftChild,
-      BinaryTreeNode rightChild)
+  public BinaryTreeNode(Object element)
   {
     this.element = element;
-    this.leftChild = leftChild;
-    this.rightChild = rightChild;
   }
 
   public void setElement(Object element)
   {
-    //TODO
+    this.element = element;
   }
 
-  public E getElement(){
-    //TODO
-  }
-
-  public void addLeftChild(BinaryTreeNode node){
-    //TODO
-  }
-
-  public void addRightChild(BinaryTreeNode node){
-    //TODO
-  }
-
-  public BinaryTreeNode getLeftChild()
+  public Object getElement()
   {
-    //TODO
+    return element;
   }
 
-  public  BinaryTreeNode getRightChild()
+  public void addLeftChild(BinaryTreeNode<Object> node)
   {
-    //TODO
+    if (leftChild == null)
+    {
+      leftChild = node;
+    }
+    else
+    {
+      System.out.println("Stinker, der er allerede en venste node");
+    }
+  }
+
+  public void addRightChild(BinaryTreeNode<Object> node)
+  {
+    if (rightChild == null)
+    {
+      rightChild = node;
+    }
+    else
+    {
+      System.out.println("Stinker, der er allerede en højre node");
+    }
+  }
+
+  public BinaryTreeNode<Object> getLeftChild()
+  {
+    return leftChild;
+  }
+
+  public BinaryTreeNode<Object> getRightChild()
+  {
+    return rightChild;
   }
 }

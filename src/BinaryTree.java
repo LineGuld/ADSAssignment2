@@ -2,21 +2,26 @@ import java.util.ArrayList;
 
 public class BinaryTree
 {
-  private BinaryTreeNode root;
+  private BinaryTreeNode<E> root;
   private int size;
 
-  public BinaryTree(BinaryTreeNode root, int size)
+  public BinaryTree(BinaryTreeNode<E> root)
   {
     this.root = root;
-    this.size = size;
+    this.size = 1;
   }
 
-  public BinaryTreeNode getRoot()
+  public BinaryTree()
+  {
+    size = 0;
+  }
+
+  public BinaryTreeNode<E> getRoot()
   {
     //TODO
   }
 
-  public void setRoot(BinaryTreeNode node)
+  public void setRoot(BinaryTreeNode<E> node)
   {
     //TODO
   }

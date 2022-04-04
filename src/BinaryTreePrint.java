@@ -16,18 +16,18 @@ public class BinaryTreePrint   {
 	 * The tree must be created elsewhere (possible in a Main or Test class).
 	 */
 
-	public void printTree(BinaryTreeNode root) {
-		ArrayList<BinaryTreeNode> parent = new ArrayList<BinaryTreeNode>();
+	public void printTree(BinaryTreeNode<Number> root) {
+		ArrayList<BinaryTreeNode<Number>> parent = new ArrayList<BinaryTreeNode<Number>>();
 		parent.add(root);
 		printT(parent, 64);
 	}
 
-	private void printT(ArrayList<BinaryTreeNode> parent, int left) {
-		ArrayList<BinaryTreeNode> children = new ArrayList<BinaryTreeNode>();
-		BinaryTreeNode<Integer> current;
+	private void printT(ArrayList<BinaryTreeNode<Number>> parent, int left) {
+		ArrayList<BinaryTreeNode<Number>> children = new ArrayList<BinaryTreeNode<Number>>();
+		BinaryTreeNode<Number> current;
 		boolean moreNodes = false;
 		boolean firstNode = true;
-		BinaryTreeNode<Integer> dummy = new BinaryTreeNode(0);
+		BinaryTreeNode<Number> dummy = new BinaryTreeNode<Number>(0);
 
 		int dist = 0;
 		System.out.println();
@@ -38,12 +38,12 @@ public class BinaryTreePrint   {
 
 			if (firstNode) {
 				printSpace(left);
-				if (current.getElement() != 0)
+				if (current.getElement().intValue() != 0)
 					System.out.print(current.getElement());
 				dist = 2 * left;
 				firstNode = false;
 
-				if (current.getElement() != 0) {
+				if (current.getElement().intValue() != 0) {
 					if (current.getLeftChild() != null) {
 						children.add(current.getLeftChild());
 						moreNodes = true;
@@ -59,7 +59,7 @@ public class BinaryTreePrint   {
 					children.add(dummy);
 				}
 			} else {
-				if (current.getElement() != 0) {
+				if (current.getElement().intValue() != 0) {
 					printSpace(dist - 1);
 					System.out.print(current.getElement());
 					if (current.getLeftChild() != null) {
