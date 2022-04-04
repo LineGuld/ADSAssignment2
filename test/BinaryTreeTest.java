@@ -51,7 +51,8 @@ public class BinaryTreeTest
 
   @Test
   void isEmptyFalse()
-    BinaryTree<Number> tree = new BinaryTree<>(new BinaryTreeNode<>(5));
+  {
+    BinaryTree tree = new BinaryTree<>(new BinaryTreeNode<>(5));
 
     Assertions.assertEquals(false, tree.isEmpty());
   }
